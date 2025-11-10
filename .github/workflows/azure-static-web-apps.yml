@@ -2,14 +2,12 @@ name: Azure Static Web Apps CI/CD
 
 on:
   push:
-    branches:
-      - master
+    branches: [master]
   workflow_dispatch:
 
 jobs:
   build_and_deploy_job:
     runs-on: ubuntu-latest
-    name: Build and Deploy Job
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -19,7 +17,7 @@ jobs:
         with:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN }}
           repo_token: ${{ secrets.GITHUB_TOKEN }}
-          action: "upload"
-          app_location: "/" # index.html is in root
-          api_location: "" # no API folder
-          output_location: "/" # static UI, no build step
+          action: upload
+          app_location: "public" # << your index.html is here
+          api_location: "" # no API in this repo
+          output_location: "" # << static site, no build step/output
