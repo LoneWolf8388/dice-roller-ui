@@ -3,7 +3,7 @@
 // ========================
 // Your Azure App Service URL for the Node API (no trailing slash)
 const API_BASE =
-  "https://dice-roller-api-cdb5hsbdh9fmc3ft.canadacentral-01.azurewebsites.net";
+  "https://dice-roller-api-cdb5hsbdh9fmc3ft.canadacentral-01.azurewebsites.net/";
 
 // Elements
 const out = (...args) => {
